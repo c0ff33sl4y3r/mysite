@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/polls/style.css">
+    <title>Polls</title>
+</head>
+<body>
+    <button class="btn btn-primary" style="padding:1rem"><a href="/">Back to home</a></button>
+    <div _ngcontent-ndp-c85="" id="KWmodal" class="modal-body">
+        <div _ngcontent-ndp-c85="" class="triangle-left-wrapper">
+          <img _ngcontent-ndp-c85="" src="/static/polls/images/Dreieck_d_links_w.svg" alt="" class="triangle-result">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+        <div _ngcontent-ndp-c85="" class="triangle-right-wrapper">
+          <img _ngcontent-ndp-c85="" src="/static/polls/images/Dreieck_d_rechts_w.svg" alt="" class="triangle-result">
+          <!---->
+          <!---->
+        </div>
+        <!---->
+        <div _ngcontent-ndp-c85="" class="kw-heading-wrapper">
+          <div _ngcontent-ndp-c85="" class="kw-header">
+            <!---->
+          </div>
+        </div>
+        <div _ngcontent-ndp-c85="" id="related-articles-body">
+          <div _ngcontent-ndp-c85="" class="suggestion-result-wrapper">
+            <lv-web-modal-body-sponsored-suggestions _ngcontent-ndp-c85="" _nghost-ndp-c82="">
+              <div _ngcontent-ndp-c82="" class="result-triangle-wrapper">
+                <div _ngcontent-ndp-c82="" class="sponsored-suggestion-card-list">
+                  {%if latest_question_list %}
+                  {%for question in latest_question_list %}
+                  <mat-card _ngcontent-ndp-c82="" class="mat-card mat-focus-indicator sponsored-suggestion-card">
+                    <a href="{% url 'polls:detail' question.id %}">
+                    <div _ngcontent-ndp-c82="" class="number-and-text-wrapper">
+                      <div _ngcontent-ndp-c82="">
+                        <div _ngcontent-ndp-c82="" class="suggestion-index-icon">
+                          <span _ngcontent-ndp-c82="" class="suggestion-index-number">
+                              {{question.id}}</span>
+                        </div>
+                      </div>
+                      <div _ngcontent-ndp-c82="" class="suggestion-title">
+                        <h4 _ngcontent-ndp-c82="">{{question.question_text}}</h4>
+                      </div>
+                    </div>
+                    </a>
+                    <a href="{% url 'polls:detail' question.id %}">
+                    <div _ngcontent-ndp-c82="" class="next-btn-wrapper">
+                      <button _ngcontent-ndp-c82="" type="button" class="next-btn">
+                        <span _ngcontent-ndp-c82="" class="material-icons noHover"> » </span>
+                    
+                      </button>
+                    </div>
+                    </a>
+                  </mat-card>
+               
+                  {%endfor%}
+                  {%endif%}
+                  <!---->
+                </div>
+                <!---->
+              </div>
+            </lv-web-modal-body-sponsored-suggestions>
+            <!---->
+            <!---->
+          </div>
+        </div>
+      </div>
+</body>
+</html>

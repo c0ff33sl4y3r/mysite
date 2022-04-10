@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	{% load static %}
+	<link rel="stylesheet" href="/static/authentication/css/register.css">
+
+	</head>
+	<body class="img js-fullheight" style="background-image: url(/static/authentication/images/bg1.jpg);">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Create An Account</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+				<h3 class="mb-4 text-center" ><a href="/login">Have an account?</a></h3>
+		      	<form action="/register" class="signin-form" method="post">
+		        {% csrf_token %}
+                <div class="form-group">
+		      		<input type="text" class="form-control" placeholder="Username" name = "username" id = "username" required>
+		      	</div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Firstname" name = "firstname" id = "firstname" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Lastname" name = "lastname" id = "lastname" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email" name = "email" id = "email">
+                </div>
+	            <div class="form-group">
+	              <input id="password-field1" name="pass1" type="password" class="form-control" placeholder="Password" required>
+	              <span toggle="#password-field1" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+                <div class="form-group">
+                    <input id="password-field2" name="pass2" type="password" class="form-control" placeholder="Confirm your password" required>
+                    <span toggle="#password-field2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
+              {%if error_message%}
+              <p style="color:red; font-weight:bold">{{error_message}}</p>
+              {%endif%}
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Register</button>
+	            </div>
+	          </form>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/static/authentication/js/jquery.min.js"></script>
+  <script src="/static/authentication/js/popper.js"></script>
+  <script src="/static/authentication/js/bootstrap.min.js"></script>
+  <script src="/static/authentication/js/main.js"></script>
+
+	</body>
+</html>
+
