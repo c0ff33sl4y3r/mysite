@@ -22,7 +22,6 @@ EMAIL_HOST = EMAIL_HOST
 EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/

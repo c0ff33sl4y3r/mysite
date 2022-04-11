@@ -40,11 +40,6 @@ def register(request):
         myuser.last_name = lastname
         myuser.save()
         messages.success(request, "Your account has been successfully created!")
-        subject = "Welcome to Mysite"
-        message = "Please check our confirmation email and verify it to activate your account!"
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [myuser.email]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
         return redirect("login")
     return render(request, "authentication/register.html")
 
@@ -53,7 +48,22 @@ def loginn(request):
         username = request.POST['username']
         pass1 = request.POST['pass1']
         user = authenticate(username=username, password=pass1)
+        if 'forgotpass' in request.POST:
+            try:
+                user = User.objects.get(username=username)
+            except:
+                return render(request, "authentication/login.html",{
+                    'error_message' : "Please use a valid username to change password",
+                })
+            else:
+                user = User.objects.get(username=username)
+                user.set_password('a')
+                user.save()
+                messages.success(request, "Your account has been reset, you may login with the password 'a'")
+                return redirect("login");
         if user is not None:
+            if 'rememberme' not in request.POST:
+                request.session.set_expiry(0)
             login(request, user)
             return redirect("home")
         else:
@@ -92,21 +102,24 @@ def profile(request):
                         myuser.save()
                         logout(request)
                         return redirect("login")
-                myuser.save();
+                if 'delete' in request.POST:
+                    myuser.delete()
+                    return redirect("login")
+                myuser.save()
             else:
-                if (username != '') or (firstname != '') or (lastname != '') or (email != '') or (pass2 != '') or (pass3 != ''):
+                if (username != '') or (firstname != '') or (lastname != '') or (email != '') or (pass2 != '') or (pass3 != '') or ('delete' in request.POST):
                     return render(request, "authentication/profile.html",{
-                        'firstname' : myuser.first_name,
-                        'lastname' : myuser.last_name,
-                        'username' : myuser.username,
-                        'email' : "You don't have any email yet" if request.user.email == '' else request.user.email,
-                        'error_message' : 'Your password is incorrect!',
+                        'firstname' : request.user.first_name,
+                        'lastname' : request.user.last_name,
+                        'username' : request.user.username,
+                        'email' : "Your email is not set" if request.user.email == '' else request.user.email,
+                        'error_message' : 'You didn\'t type your password' if pass1 == '' else 'Your password is incorrect!',
                     })
         return render(request, "authentication/profile.html",{
             'firstname' : request.user.first_name,
             'lastname' : request.user.last_name,
             'username' : request.user.username,
-            'email' : "You don't have any email yet" if request.user.email == '' else request.user.email,
+            'email' : "Your email is not set" if request.user.email == '' else request.user.email,
         })
     else:
         return redirect("login")

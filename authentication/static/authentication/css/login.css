@@ -210,6 +210,20 @@ button,
 input {
   overflow: visible; }
 
+input[type=submit] {
+  background-color: transparent;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  border:transparent;
+  color: #fbceb5; }
+  input[type=submit]:hover, input[type=submit]:focus {
+    color:#0056b3;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 button,
 select {
   text-transform: none; }
