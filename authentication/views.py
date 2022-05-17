@@ -123,3 +123,6 @@ def profile(request):
         })
     else:
         return redirect("login")
+
+def pacman(request):
+    return render(request, "authentication/pacman.html")

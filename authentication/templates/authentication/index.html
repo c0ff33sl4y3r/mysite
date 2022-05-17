@@ -9,6 +9,7 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="static/index/nicepage.css" media="screen">
     <link rel="stylesheet" href="static/index/home.css" media="screen">
+    <link rel="icon" href="static/index/images/logo.ico" type="image/x-icon">
     <script class="u-script" type="text/javascript" src="/static/index/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/static/index/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.8.2, nicepage.com">
@@ -31,6 +32,8 @@
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-list u-list-1">
           <div class="u-repeater u-repeater-1">
+            <img src="static/index/images/johnnysins.jpg" class="newimage">
+            <img src="static/index/images/job.gif" class="newimage1">
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <a href="profile" class="u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">Profile</a>
@@ -48,6 +51,8 @@
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-list u-list-1">
           <div class="u-repeater u-repeater-1">
+            <img src="static/index/images/johnnysins.jpg" class="newimage">
+            <img src="static/index/images/job.gif" class="newimage1">
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <a href="login" class="u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">Login</a>
@@ -89,13 +94,11 @@
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <p class="u-custom-font u-font-merriweather u-text u-text-body-color u-text-3">
-                    <span style="font-size: 1.125rem;">However, we invite you to participate in a several-minute questionnaires. The link is in the following button.</span>
+                    <span style="font-size: 1.125rem;">However, there are a few recreational features that we hope you enjoy.</span>
                   </p>
-                  {%if user.is_authenticated%}
-                  <a href="/polls" class="u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-4-light-2 u-palette-4-base u-radius-50 u-btn-1">Take The Survey<br>
-                  {%else%}
-                  <a href="/login" class="u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-4-light-2 u-palette-4-base u-radius-50 u-btn-1">Please Login or Register To Continue<br>
-                  {%endif%}
+                  <a href="/chat" class="u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-4-light-2 u-palette-4-base u-radius-50 u-btn-1">Chat with strangers<br></a>
+                  <h4 style="text-align:center; font-family: 'Times New Roman', Times, serif; text-decoration: underline;">or</h4>
+                  <a href="/pacman" class="u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-4-light-2 u-palette-4-base u-radius-50 u-btn-1">Play a game<br>
                   </a>
                 </div>
               </div>

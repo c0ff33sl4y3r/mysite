@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="{%static 'chat/index.css'%}">
+    <script src="{%static 'chat/index.js'%}"></script>
+    <script src="https://cdn02.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+    <script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.33217" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/defaultV2.css?"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/themes/CSS/548a097b700cc4dd218b4567.css?themeRevisionID=5fbe933a1b9daf23d8388ca1"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_styles.css?3.3.33217" />
+    <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_feature.css?3.3.33217" />
+    <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.33217"></script>
+    <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.33217"></script>
+    <title>Chat Rooms</title>
+</head>
+<body>
+    What chat room would you like to enter?<br>
+    <input id="room-name-input" type="text" size="100"><br>
+    <input id="room-name-submit" type="button" value="Enter">
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = '/chat/' + roomName + '/';
+        };
+    </script>
+    <form class="jotform-form" method="post" name="form_221339033743451" id="221339033743451" accept-charset="utf-8" autocomplete="on">
+      <input type="hidden" name="formID" value="221339033743451" />
+      <input type="hidden" id="JWTContainer" value="" />
+      <input type="hidden" id="cardinalOrderNumber" value="" />
+      <div role="main" class="form-all">
+        <style>
+          .form-all:before { background: none;}
+        </style>
+        <ul class="form-section page-section">
+          <li id="cid_1" class="form-input-wide" data-type="control_head">
+            <div class="form-header-group  header-large">
+              <div class="header-text httal htvam">
+                <h1 id="header_1" class="form-header" data-component="header">
+                  Information before queuing in!
+                </h1>
+                <div id="subHeader_1" class="form-subHeader">
+                  We are pleased to inform that all data is not necessarily required to be known by the stranger. However, for your full and best experience, all data should be filled in choices below
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="form-line form-line-column form-col-1 jf-required" data-type="control_radio" id="id_6">
+            <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6">
+              Choose your gender:
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <div id="cid_6" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-single-column" role="group" aria-labelledby="label_6" data-component="radio">
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_6" class="form-radio validate[required]" id="input_6_0" name="q6_chooseYour" value="male_1" required="" />
+                  <label id="label_input_6_0" for="input_6_0" value="male"> Male </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_6" class="form-radio validate[required]" id="input_6_1" name="q6_chooseYour" value="female_1" required="" />
+                  <label id="label_input_6_1" for="input_6_1" value="female"> Female </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_6" class="form-radio validate[required]" id="input_6_2" name="q6_chooseYour" value="other_genders_1" required="" />
+                  <label id="label_input_6_2" for="input_6_2" value="other_genders"> Others </label>
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="form-line form-line-column form-col-2 jf-required" data-type="control_radio" id="id_48">
+            <label class="form-label form-label-top form-label-auto" id="label_48" for="input_48">
+              Choose the stranger's gender:
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <div id="cid_48" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-single-column" role="group" aria-labelledby="label_48" data-component="radio">
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_48" class="form-radio validate[required]" id="input_48_0" name="q48_chooseThe48" value="male_2" required="" />
+                  <label id="label_input_48_0" for="input_48_0" value="male_o"> Male </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_48" class="form-radio validate[required]" id="input_48_1" name="q48_chooseThe48" value="female_2" required="" />
+                  <label id="label_input_48_1" for="input_48_1" value="female_o"> Female </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_48" class="form-radio validate[required]" id="input_48_2" name="q48_chooseThe48" value="other_genders" required="" />
+                  <label id="label_input_48_2" for="input_48_2" value="other_gender_o"> Others </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_48" class="form-radio validate[required]" id="input_48_3" name="q48_chooseThe48" checked="" value="random_gender" required="" />
+                  <label id="label_input_48_3" for="input_48_3"> Approve all requests </label>
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="form-line form-line-column form-col-3 jf-required" data-type="control_radio" id="id_9">
+            <label class="form-label form-label-top form-label-auto" id="label_9" for="input_9">Choose your age(s):
+
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <div id="cid_9" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_9" class="form-radio validate[required]" id="input_9_0" name="q9_chooseYour9" value="certain_age_1" required="" />
+                  <label id="label_input_9_0" for="input_9_0"> Type a certain age: </label>
+                  <input type="number" aria-describedby="label_51" id="input_age_1" value="age_1">
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_9" class="form-radio validate[required]" id="input_9_1" name="q9_chooseYour9" value="age_range_1" required="" />
+                  <label id="label_input_9_1" for="input_9_1"> Choose age range: </label>
+                  <input type="number" aria-describedby="label_51" id="input_age_from_1" value="age_from_1">
+                  <input type="number" aria-describedby="label_51" id="input_age_to_1" value="age_to_1">
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="form-line form-line-column form-col-4 jf-required" data-type="control_radio" id="id_51">
+            <label class="form-label form-label-top form-label-auto" id="label_51" for="input_51">
+              Choose the stranger's ages:
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <div id="cid_51" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-single-column" role="group" aria-labelledby="label_51" data-component="radio">
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_51" class="form-radio validate[required]" id="input_51_0" name="q51_chooseThe" value="certain_age_2" required="" />
+                  <label id="label_input_51_0" for="input_51_0"> Type a certain age: </label>
+                  <input type="number" aria-describedby="label_51" id="input_age_2" value="age_2">
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_51" class="form-radio validate[required]" id="input_51_1" name="q51_chooseThe" value="age_range_2" required="" />
+                  <label id="label_input_51_1" for="input_51_1"> Choose age range: </label>
+                  <input type="number" aria-describedby="label_51" id="input_age_from_2" value="age_from_2">
+                  <input type="number" aria-describedby="label_51" id="input_age_to_2" value="age_to_2">
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_51" class="form-radio validate[required]" id="input_51_2" name="q51_chooseThe" checked="" value="random_age" required="" />
+                  <label id="label_input_51_2" for="input_51_2"> Approve all requests </label>
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="form-line form-line-column form-col-5 jf-required" data-type="control_radio" id="id_55">
+            <label class="form-label form-label-top form-label-auto" id="label_55" for="input_55">
+              Choose your workplace/ school:
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <div id="cid_55" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-single-column" role="group" aria-labelledby="label_55" data-component="radio">
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_55" class="form-radio validate[required]" id="input_55_0" name="q55_chooseYour55" value="High School for Gifted Students - HNUE" required="" />
+                  <label id="label_input_55_0" for="input_55_0"> High School for Gifted Students - HNUE </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_55" class="form-radio validate[required]" id="input_55_1" name="q55_chooseYour55" value="Others" required="" />
+                  <label id="label_input_55_1" for="input_55_1"> Others </label>
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="form-line form-line-column form-col-6 jf-required" data-type="control_radio" id="id_56">
+            <label class="form-label form-label-top form-label-auto" id="label_56" for="input_56">
+              Choose your workplace/ school:
+              <span class="form-required">
+                *
+              </span>
+            </label>
+            <div id="cid_56" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-single-column" role="group" aria-labelledby="label_56" data-component="radio">
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_56" class="form-radio validate[required]" id="input_56_0" name="q56_chooseYour56" value="High School for Gifted Students - HNUE" required="" />
+                  <label id="label_input_56_0" for="input_56_0"> High School for Gifted Students - HNUE </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_56" class="form-radio validate[required]" id="input_56_1" name="q56_chooseYour56" value="Others" required="" />
+                  <label id="label_input_56_1" for="input_56_1"> Others </label>
+                </span>
+                <span class="form-radio-item" style="clear:left">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" aria-describedby="label_56" class="form-radio validate[required]" id="input_56_2" name="q56_chooseYour56" checked="" value="Approve all requests" required="" />
+                  <label id="label_input_56_2" for="input_56_2"> Approve all requests </label>
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="form-line" data-type="control_button" id="id_34">
+            <div id="cid_34" class="form-input-wide" data-layout="full">
+              <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                <button id="input_34" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+                  Queue in
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <script>
+        document.getElementById("label_input_9_1").onclick = function(){
+           document.getElementById("input_age_1").disabled = true;
+           document.getElementById("input_age_from_1").disabled = false;
+           document.getElementById("input_age_to_1").disabled = false;
+        }
+        document.getElementById("label_input_9_0").onclick = function(){
+           document.getElementById("input_age_1").disabled = false;
+           document.getElementById("input_age_from_1").disabled = true;
+           document.getElementById("input_age_to_1").disabled = true;
+        }
+        document.getElementById("label_input_51_1").onclick = function(){
+           document.getElementById("input_age_2").disabled = true;
+           document.getElementById("input_age_from_2").disabled = false;
+           document.getElementById("input_age_to_2").disabled = false;
+        }
+        document.getElementById("label_input_51_0").onclick = function(){
+           document.getElementById("input_age_2").disabled = false;
+           document.getElementById("input_age_from_2").disabled = true;
+           document.getElementById("input_age_to_2").disabled = true;
+        }
+        document.getElementById("label_input_51_2").onclick = function(){
+           document.getElementById("input_age_2").disabled = true;
+           document.getElementById("input_age_from_2").disabled = true;
+           document.getElementById("input_age_to_2").disabled = true;
+        }
+      </script>    
+</body>
+</html>
